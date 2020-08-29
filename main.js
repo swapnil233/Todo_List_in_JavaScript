@@ -8,6 +8,12 @@ const list = document.getElementById('list');
 // Select the input
 const input = document.getElementById('input');
 
+// Lists array
+let LIST = [];
+
+// id
+let id = 0;
+
 function addToDo(todo) {
     const text =
         `<li class="item">
@@ -21,4 +27,28 @@ function addToDo(todo) {
     list.insertAdjacentHTML(position, text);
 }
 
-addToDo("Do dishes");
+// Add todo when 'enter' button is pressed.
+document.addEventListener('keyup', function (e) {
+    if (e.keyCode == 13) {
+        const todo = input.value;
+
+        // check if input is empty or not
+        if (todo) {
+            addToDo(todo);
+        }
+        // clear out the input field for next addition
+        input.value = '';
+    }
+});
+
+// Add todo when the plus button is clicked
+function todo_button_clicked() {
+    const todo = input.value;
+
+    // check if input is empty or not
+    if (todo) {
+        addToDo(todo);
+    }
+    // clear out the input field for next addition
+    input.value = '';
+}
