@@ -15,11 +15,15 @@ let LIST = [];
 let id = 0;
 
 function addToDo(todo) {
+    // fa fa-circle-thin
+    // fas fa-check-circle
     const text =
         `<li class="item">
-            <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+            <i class="fa fa-circle-thin co" job="complete" id='check_mark_button' onclick='check_off()'></i>
+            
             <p class="text">${todo}</p>
-            <i class="fa fa-trash-o de" job="delete" id="0"></i> 
+            
+            <i class="fa fa-trash-o de" job="delete" id="delete_button" onclick='delete_todo()'></i> 
         </li>`
 
     const position = 'beforeend';
@@ -51,4 +55,33 @@ function todo_button_clicked() {
     }
     // clear out the input field for next addition
     input.value = '';
+}
+
+// Delete the todo when delete button is clicked
+function delete_todo() {
+    const delete_button = document.getElementById('delete_button');
+    delete_button.parentElement.remove();
+}
+
+// Checkmark/uncheckmark list element when
+function check_off() {
+    const check_mark_button = document.getElementById('check_mark_button');
+
+    // fa fa-circle-thin
+    // fas fa-check-circle
+
+    // check if thin or checked
+    if (check_mark_button.classList.contains("fa")) {
+        check_mark_button.classList.remove("fa");
+        check_mark_button.classList.remove("fa-circle-thin");
+
+        check_mark_button.classList.add("fas");
+        check_mark_button.classList.add("fa-check-circle");
+    } else {
+        check_mark_button.classList.add("fa");
+        check_mark_button.classList.add("fa-circle-thin");
+
+        check_mark_button.classList.remove("fas");
+        check_mark_button.classList.remove("fa-check-circle");
+    }
 }
