@@ -8,12 +8,6 @@ const list = document.getElementById('list');
 // Select the input
 const input = document.getElementById('input');
 
-// Lists array
-let LIST = [];
-
-// id
-let id = 0;
-
 function addToDo(todo) {
     // fa fa-circle-thin
     // fas fa-check-circle
@@ -31,6 +25,7 @@ function addToDo(todo) {
     list.insertAdjacentHTML(position, text);
 }
 
+<<<<<<< HEAD
 // Add todo when 'enter' button is pressed.
 document.addEventListener('keyup', function (e) {
     if (e.keyCode == 13) {
@@ -85,3 +80,6 @@ function check_off() {
         check_mark_button.classList.remove("fa-check-circle");
     }
 }
+=======
+addToDo("Do dishes");
+>>>>>>> parent of a5674b2... Can now add a to-do by pressing 'enter' or clicking on the plus arrow after typing something in.
