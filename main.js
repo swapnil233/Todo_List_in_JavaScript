@@ -26,6 +26,7 @@ function addToDo(todo) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Add todo when 'enter' button is pressed.
 document.addEventListener('keyup', function (e) {
     if (e.keyCode == 13) {
@@ -80,6 +81,9 @@ function check_off() {
         check_mark_button.classList.remove("fa-check-circle");
     }
 }
+=======
+addToDo("Do dishes");
+>>>>>>> parent of a5674b2... Can now add a to-do by pressing 'enter' or clicking on the plus arrow after typing something in.
 =======
 addToDo("Do dishes");
 >>>>>>> parent of a5674b2... Can now add a to-do by pressing 'enter' or clicking on the plus arrow after typing something in.
